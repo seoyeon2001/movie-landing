@@ -1,0 +1,187 @@
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Emblema+One&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Sigmar&display=swap');
+
+/* RESET */
+/* css끼리도 import가능 */
+@import url('reset.css');
+
+/* HEADER */
+header {
+  /* background-color: orange; */
+  width: 100%;
+  border-bottom: 1px solid #999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5vh 5vw;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+header h1 a {
+  font: bold 24px/50px 'Emblema One';
+  color: #555;
+}
+
+header .btn_menu {
+  font-size: 24px;
+  color: #333;
+  display: none; /* 자리까지 빼앗김 */
+}
+
+header #gnb {
+  display: flex;
+}
+
+header #gnb li {
+  margin: 0 20px;
+}
+
+header #gnb li a {
+  font: bold 16px/1 'Emblema One';
+  color: #333;
+  letter-spacing: 1px;
+}
+
+header #sns {
+  display: flex;
+  gap: 10px;
+}
+
+/* gap: 10px; 랑 똑같음 */
+/* 
+header #sns li {
+  margin: 0 10px;
+} */
+
+header #sns li a {
+  font-size: 16px;
+  color: #333;
+}
+
+/* BACKGROUNND VIDEO */
+figure {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+figure video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* TEXT */
+figure .text {
+  position: absolute;
+  left: 6vw;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+figure .text p {
+  font: normal 6vw/1 'Emblema One';
+  color: rgb(218, 218, 218);
+}
+
+figure .text ul {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+figure .text ul li a i {
+  font-size: 20px;
+  color: rgb(218, 218, 218);
+  margin-right: 10px;
+}
+
+figure .text ul li a strong {
+  font: normal 14px/1 'Emblema One';
+  color: rgb(218, 218, 218);
+  letter-spacing: 1px;
+}
+
+/* FOOTER */
+footer {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  font: 12px/1 'arial';
+  color: rgb(218, 218, 218);
+  letter-spacing: 2px;
+  padding: 5vh 5vw;
+  z-index: 2;
+}
+
+#snb {
+  display: none;
+}
+
+/* 미디어쿼리는 제일 아래 위치해야 함 */
+/* MOBILE */
+@media screen and (max-width: 968px) {
+  header #gnb {
+    display: none;
+  }
+
+  header #sns {
+    display: none;
+  }
+
+  header .btn_menu {
+    display: block;
+  }
+
+  figure .text p {
+    font-size: 7vw;
+  }
+
+  #snb {
+    display: block;
+  }
+
+  header #snb .sub_menu {
+    position: absolute;
+    padding: 10px 25px;
+    background-color: #ecd9d9;
+    border: 1px solid #302c2c;
+    border-radius: 10px;
+    right: 5vw;
+    text-align: right;
+    visibility: visible;
+    opacity: 1;
+    transition-duration: 0.4s;
+  }
+
+  header #snb .sub_menu.hide {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  header #snb .sub_menu li {
+    padding: 10px 0px;
+    font: normal 16px/1 'Emblema One';
+  }
+
+  header #snb .sub_menu li a {
+    color: black;
+  }
+
+  header #snb .sub_menu li a i {
+    margin-left: 8px;
+    padding: 10px 0px;
+    font: normal 16px/1 'Emblema One';
+    color: black;
+  }
+}
